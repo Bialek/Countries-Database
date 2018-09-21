@@ -4,16 +4,18 @@ import { setContinent, deleteCountry } from '../actions/actions-countries';
 import CountryFlagList from '../presentational/flag-list.component';
 
 class ContinentsContainer extends Component {
-    chooseContinent(event) {
+    chooseContinent = (event) => {
         this.props.dispatch(setContinent(event.target.value))
     }
 
-    deleteCountry(id) {
+    deleteCountry = (id) => {
         this.props.dispatch(deleteCountry(id));
     }
 
-    componentDidMount() {
-      setTimeout(() => this.props.dispatch(setContinent('Africa')), 1000);
+    componentDidMount = () => {
+        setTimeout(() => {
+            this.props.dispatch(setContinent('Africa'));
+        }, 1000);
     }
 
     render() { 

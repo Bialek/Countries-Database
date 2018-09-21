@@ -11,11 +11,11 @@ class CountryFlagContainer extends Component {
         }, 1000);
     }
 
-    search(event) {
+    search = (event) => {
         this.props.dispatch(searchCountries(event.target.value));
     }
 
-    deleteCountry(id) {
+    deleteCountry = (id) => {
         this.props.dispatch(deleteCountry(id));
     }
 
@@ -23,9 +23,9 @@ class CountryFlagContainer extends Component {
         return (
             <div>
                 <div className="search text-center">
-                    <input type="text" placeholder="find country" onChange={this.search.bind(this)}/>
+                    <input type="text" placeholder="find country" onChange={this.search}/>
                 </div>
-                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry.bind(this)} />
+                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry} />
             </div>
         )
     }
