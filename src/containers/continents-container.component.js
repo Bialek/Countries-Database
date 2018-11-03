@@ -13,9 +13,7 @@ class ContinentsContainer extends Component {
     }
 
     componentDidMount = () => {
-        setTimeout(() => {
-            this.props.dispatch(setContinent('Africa'));
-        }, 1000);
+        this.props.dispatch(setContinent('Africa'));
     }
 
     render() { 

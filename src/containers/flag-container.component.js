@@ -5,10 +5,8 @@ import { getCountries, searchCountries, deleteCountry } from '../actions/actions
 
 class CountryFlagContainer extends Component {
     componentDidMount() {
-        setTimeout(() => {
-            this.props.dispatch(getCountries())
-            this.props.dispatch(searchCountries(''))
-        }, 1000);
+        this.props.dispatch(getCountries())
+        this.props.dispatch(searchCountries(''))
     }
 
     search = (event) => {

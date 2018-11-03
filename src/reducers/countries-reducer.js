@@ -7,13 +7,22 @@ const initialState = {
     visibleCountries: []
 };
 
-
 const countriesReducer = function (state = initialState, action) {
-    async function app() {
-        const countriesData = await fetch(url + "all").then(data => data.json());
-        state.countries = countriesData;
-    }
-    window.onload = app();
+    (function () {
+        state.countries = localStorage.getItem('countries');
+        state.countries = JSON.parse(state.countries);
+        if (state.countries === null ) {
+            action.type = '';
+            fetch(url + "all")
+                .then(data => data.json())
+                .then(data => {
+                    state.countries = data;
+                    localStorage.setItem('countries', JSON.stringify(data));
+                });
+            
+        };
+    })();
+
     switch (action.type) {
         case GET_COUNTRIES:
             return Object.assign({}, state, {countries: state.countries});
