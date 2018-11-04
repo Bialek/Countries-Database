@@ -9,8 +9,8 @@ class CountryFlagContainer extends Component {
         this.props.dispatch(searchCountries(''))
     }
 
-    search = (event) => {
-        this.props.dispatch(searchCountries(event.target.value));
+    search = (e) => {
+        this.props.dispatch(searchCountries(e.target.value));
     }
 
     deleteCountry = (id) => {

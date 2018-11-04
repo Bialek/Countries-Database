@@ -11,7 +11,7 @@ const CountryDetails = (props) => (
 
             <div className="info">
                 <div>
-                    <span>{Math.floor(props.country.population)}</span>
+                    <span>{!isNaN(props.country.population) ? (props.country.population / 1000).toFixed(1) + ' k': props.country.population}</span>
                     <span>Population</span>
                 </div>
 
@@ -23,6 +23,23 @@ const CountryDetails = (props) => (
                 <div>
                     <span>{props.country.area}</span>
                     <span>Area</span>
+                </div>
+            </div>
+
+            <div className="info">
+                <div>
+                    <span>{props.country.languages ? props.country.languages[0].name : ''}</span>
+                    <span>Language</span>
+                </div>
+
+                <div>
+                <span>{props.country.timezones ? props.country.timezones[0] : ''}</span>
+                    <span>Timezone</span>
+                </div>
+
+                <div>
+                    <span>{props.country.currencies ? props.country.currencies[0].name + ' ' + props.country.currencies[0].symbol : ''}</span>
+                    <span>Currency</span>
                 </div>
             </div>
         </div>

@@ -4,8 +4,8 @@
 }
 
 .country-wrapper {
-    height: 400px;
-    width: 300px;
+    height: 500px;
+    width: 400px;
     border-radius: 10px;
     -webkit-box-shadow: 0 14px 28px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.13);
             box-shadow: 0 14px 28px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.13);
@@ -23,8 +23,8 @@ header {
 
 .country-photo {
     position: absolute;
-    width: 115px;
-    height: 115px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 10px solid #003e9f;
     left: 0;
@@ -62,6 +62,7 @@ h2 {
     display: flex;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    margin-bottom: 15px;
 }
 
 .info div {
