@@ -6,14 +6,15 @@ import DevTools from './DevTools ';
 import {Router, hashHistory} from 'react-router';
 import './country.css'
 import routes from './routes';
+import { Root } from './styled/Root';
 
 
 render(
     <Provider store={store}>
-        <div>
+        <Root>
             <Router history={hashHistory} routes={routes}/>
             <DevTools/>
-        </div>
+        </Root>
     </Provider>,
     document.getElementById('root')
 );
