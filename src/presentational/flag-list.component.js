@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import CountryFlag from './flag.component'
+import CountryFlag from './flag.component';
+import {CountriesList, } from '../styled/countries-list';
 
 const CountryFlagList = (props) => (
-    <div className="countries-list">
+    <CountriesList>
         {props.countries.map(country=> {
             return (
                 <div className="single-country" key={country.numericCode}>
@@ -14,7 +15,7 @@ const CountryFlagList = (props) => (
                 </div>
             )
         })}
-    </div>
+    </CountriesList>
 );
 
 export default CountryFlagList;

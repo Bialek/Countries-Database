@@ -12,8 +12,6 @@ const countriesReducer = function (state = initialState, action) {
         state.countries = localStorage.getItem('countries');
         state.countries = JSON.parse(state.countries);
         if (state.countries === null ) {
-            console.log("fetch again");
-            
             action.type = '';
             fetch(url + "all")
                 .then(data => data.json())
