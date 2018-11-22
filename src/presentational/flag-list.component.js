@@ -1,18 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router';
 import CountryFlag from './flag.component';
-import {CountriesList, } from '../styled/countries-list';
+import {CountriesList, SingleCountry, CountryLayer } from '../styled/flag-list';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const CountryFlagList = (props) => (
     <CountriesList>
         {props.countries.map(country=> {
             return (
-                <div className="single-country" key={country.numericCode}>
-                    <Link className='logo' key={country.numericCode} to={'countries/country/' + country.numericCode}>
-                        <CountryFlag country={country} />
-                    </Link>
-                    <button className="delete-btn" onClick={props.deleteCountry.bind(null, country.numericCode)}>X</button>
-                </div>
+                <SingleCountry key={country.numericCode}>
+                    <CountryFlag country={country} />
+                    <CountryLayer>
+                        <Link className='logo' key={country.numericCode} to={'countries/country/' + country.numericCode}>
+                            more info
+                            
+                        </Link>
+                        <button className="delete-btn" onClick={props.deleteCountry.bind(null, country.numericCode)}>
+                        <FontAwesomeIcon icon="trash-alt" />
+                        Delete
+                        </button>
+
+                    </CountryLayer>
+                </SingleCountry>
             )
         })}
     </CountriesList>

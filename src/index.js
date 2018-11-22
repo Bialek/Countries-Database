@@ -7,6 +7,11 @@ import {Router, hashHistory} from 'react-router';
 import './country.css'
 import routes from './routes';
 import { Root } from './styled/Root';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faTrashAlt)
+
 
 
 render(
