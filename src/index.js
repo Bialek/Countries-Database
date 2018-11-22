@@ -1,25 +1,38 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {Provider} from 'react-redux';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import store from './store';
 import DevTools from './DevTools ';
-import {Router, hashHistory} from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import './country.css'
 import routes from './routes';
-import { Root } from './styled/Root';
+import { createGlobalStyle  } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faInfo, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faTrashAlt)
+library.add(faTrashAlt, faInfo, faHeart)
 
-
+ const GlobalStyle = createGlobalStyle `
+    * {
+        outline: none;
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        background: #eee;
+        height: 100vh;
+    }
+`
 
 render(
     <Provider store={store}>
-        <Root>
+        <div>
             <Router history={hashHistory} routes={routes}/>
             <DevTools/>
-        </Root>
+            <GlobalStyle />
+        </div>
     </Provider>,
     document.getElementById('root')
 );

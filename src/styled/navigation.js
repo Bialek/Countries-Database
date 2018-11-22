@@ -8,7 +8,7 @@ export const Navbar = styled.nav`
     background-color: #f8f8f8;
     border-color: #e7e7e7;
     position: relative;
-    min-height: 50px;
+    height: 60px;
     border: 1px solid transparent;
 `
 export const NavbarContainer = styled.div`

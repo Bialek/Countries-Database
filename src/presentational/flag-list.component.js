@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 import CountryFlag from './flag.component';
-import {CountriesList, SingleCountry, CountryLayer } from '../styled/flag-list';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { CountriesList, SingleCountry, CountryLayer } from '../styled/flag-list';
+import { Btn } from '../styled/Buttons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const CountryFlagList = (props) => (
     <CountriesList>
@@ -11,15 +12,18 @@ const CountryFlagList = (props) => (
                 <SingleCountry key={country.numericCode}>
                     <CountryFlag country={country} />
                     <CountryLayer>
-                        <Link className='logo' key={country.numericCode} to={'countries/country/' + country.numericCode}>
-                            more info
-                            
+                        <Btn delete onClick={props.deleteCountry.bind(null, country.numericCode)}>
+                            <FontAwesomeIcon icon="trash-alt" />
+                            Delete
+                        </Btn>
+                        <Btn onClick={props.deleteCountry.bind(null, country.numericCode)}>
+                            <FontAwesomeIcon icon="heart" />
+                            Delete
+                        </Btn>
+                        <Link key={country.numericCode} to={'countries/country/' + country.numericCode}>
+                            <FontAwesomeIcon icon="info" />
+                            more information
                         </Link>
-                        <button className="delete-btn" onClick={props.deleteCountry.bind(null, country.numericCode)}>
-                        <FontAwesomeIcon icon="trash-alt" />
-                        Delete
-                        </button>
-
                     </CountryLayer>
                 </SingleCountry>
             )
