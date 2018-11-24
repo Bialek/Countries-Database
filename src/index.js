@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import DevTools from './DevTools ';
 import { Router, hashHistory } from 'react-router';
-import './country.css'
 import routes from './routes';
 import { createGlobalStyle  } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
