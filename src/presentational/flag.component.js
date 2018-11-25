@@ -1,10 +1,11 @@
 import React from 'react';
 import { CountryLogo } from '../styled/flag';
+import { HeadingSecendery } from '../styled/Heading'
 
 const CountryFlag = (props) => (
     <div>
         <CountryLogo src={props.country.flag} alt="country flag" />
-        <h2>{props.country.name}</h2>
+        <HeadingSecendery>{props.country.name}</HeadingSecendery>
     </div>
 );
 

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setContinent, deleteCountry } from '../actions/actions-countries';
 import CountryFlagList from '../presentational/flag-list.component';
+import { SelectContinent } from '../styled/continents-container';
+import { SelectButton } from '../styled/Buttons';
 
 class ContinentsContainer extends Component {
-    chooseContinent = (event) => {
-        console.log(event.target.value);
-        
-        this.props.dispatch(setContinent(event.target.value))
+    chooseContinent = (e) => {
+        this.props.dispatch(setContinent(e.target.value))
     }
 
     deleteCountry = (id) => {
@@ -21,14 +21,14 @@ class ContinentsContainer extends Component {
     render() { 
         return (
             <div>
-                <div>
-                    <button onClick={e => this.chooseContinent(e)} value="Africa">Africa</button>
-                    <button onClick={e => this.chooseContinent(e)} value="Americas">Americas</button>
-                    <button onClick={e => this.chooseContinent(e)} value="Asia">Asia</button>
-                    <button onClick={e => this.chooseContinent(e)} value="Europe">Europe</button>
-                    <button onClick={e => this.chooseContinent(e)} value="Oceania">Oceania</button>
-                </div>
-                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry.bind(this)} />
+                <SelectContinent>
+                    <SelectButton onClick={e => this.chooseContinent(e)} value="Africa">Africa</SelectButton>
+                    <SelectButton onClick={e => this.chooseContinent(e)} value="Americas">Americas</SelectButton>
+                    <SelectButton onClick={e => this.chooseContinent(e)} value="Asia">Asia</SelectButton>
+                    <SelectButton onClick={e => this.chooseContinent(e)} value="Europe">Europe</SelectButton>
+                    <SelectButton onClick={e => this.chooseContinent(e)} value="Oceania">Oceania</SelectButton>
+                </SelectContinent>
+                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry} />
             </div>
         )
     }

@@ -8,14 +8,17 @@ export const Navbar = styled.nav`
     background-color: #f8f8f8;
     border-color: #e7e7e7;
     position: relative;
-    height: 60px;
     border: 1px solid transparent;
+    margin-bottom: 30px;
 `
 export const NavbarContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-self: center;
     justify-content: space-around;
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
 `
 
 export const NavbarItem = styled.li`
