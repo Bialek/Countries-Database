@@ -25,7 +25,7 @@ export const CountryLayer = styled.div`
     width: 100%;
     height: 100%;
     z-index: 999;
-    transition: all ease-in-out .8s;
+    transition: all ease-in-out .3s;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

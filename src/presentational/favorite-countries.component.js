@@ -5,20 +5,16 @@ import { CountriesList, SingleCountry, CountryLayer } from '../styled/flag-list'
 import { Btn } from '../styled/Buttons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const CountryFlagList = (props) => (
+const FavoriteCountryList = (props) => (
     <CountriesList>
         {props.countries.map(country=> {
             return (
                 <SingleCountry key={country.numericCode}>
                     <CountryFlag country={country} />
                     <CountryLayer>
-                        <Btn delete onClick={props.deleteCountry.bind(null, country.numericCode)}>
+                        <Btn delete onClick={props.deleteFavorite.bind(null, country.numericCode)}>
                             <FontAwesomeIcon icon="trash-alt" />
                             Delete
-                        </Btn>
-                        <Btn onClick={props.addFavorite.bind(null, country.numericCode)}>
-                            <FontAwesomeIcon icon="heart" />
-                            Favorite
                         </Btn>
                         <Link key={country.numericCode} to={'countries/country/' + country.numericCode}>
                             <FontAwesomeIcon icon="info" />
@@ -31,4 +27,4 @@ const CountryFlagList = (props) => (
     </CountriesList>
 );
 
-export default CountryFlagList;
+export default FavoriteCountryList;

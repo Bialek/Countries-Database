@@ -6,6 +6,7 @@ export const HomeContainer = styled.div`
     background-image: url('http://mediad.publicbroadcasting.net/p/vpr/files/styles/x_large/public/201701/Map-countries-istock-ZarkoCvijovic-20170104.jpg');
     background-position: top center;
     background-size: cover;
+    margin-top: -30px;
     & h1 {
         text-align: center;
         color: #777;

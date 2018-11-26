@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setContinent, deleteCountry } from '../actions/actions-countries';
+import { setContinent, deleteCountry, addFavorite } from '../actions/actions-countries';
 import CountryFlagList from '../presentational/flag-list.component';
 import { SelectContinent } from '../styled/continents-container';
 import { SelectButton } from '../styled/Buttons';
 
 class ContinentsContainer extends Component {
+
+    componentDidMount = () => {
+        this.props.dispatch(setContinent("Africa"));
+    }
+
     chooseContinent = (e) => {
         this.props.dispatch(setContinent(e.target.value))
     }
@@ -14,8 +19,8 @@ class ContinentsContainer extends Component {
         this.props.dispatch(deleteCountry(id));
     }
 
-    componentDidMount = () => {
-        this.props.dispatch(setContinent("Africa"));
+    addFavorite = id => {
+        this.props.dispatch(addFavorite(id));
     }
 
     render() { 
@@ -28,7 +33,7 @@ class ContinentsContainer extends Component {
                     <SelectButton onClick={e => this.chooseContinent(e)} value="Europe">Europe</SelectButton>
                     <SelectButton onClick={e => this.chooseContinent(e)} value="Oceania">Oceania</SelectButton>
                 </SelectContinent>
-                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry} />
+                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry} addFavorite={this.addFavorite} />
             </div>
         )
     }

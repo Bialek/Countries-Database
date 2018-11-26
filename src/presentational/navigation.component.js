@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Navbar, NavbarContainer, NavbarItem } from '../styled/navigation';
 const Navigation = props => (
@@ -18,6 +19,11 @@ const Navigation = props => (
                     </NavbarItem>
                     <NavbarItem>
                         <Link to="/contact">Contact</Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <Link to="/favorite">
+                            <FontAwesomeIcon icon='heart'/>
+                        </Link>
                     </NavbarItem>
                 </ul>
             </NavbarContainer>
