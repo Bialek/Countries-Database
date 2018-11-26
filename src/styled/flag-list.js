@@ -14,6 +14,9 @@ export const SingleCountry = styled.div`
     @media screen and (max-width: 768px) {
         width: 46%;
     }
+    @media screen and (max-width: 576px) {
+        width: 90%;
+    }
 `
 export const CountryLayer = styled.div`
     position: absolute;

@@ -57,7 +57,6 @@ const countriesReducer = function (state = initialState, action) {
            const notDeletedFavorite = state.favoriteCountries.filter(favorite => favorite.numericCode !== action.id);
            return Object.assign({}, state, {favoriteCountries: notDeletedFavorite});
 
-
         default: return state;
     }
 };
