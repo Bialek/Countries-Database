@@ -5,6 +5,11 @@ import { getCountries, searchCountries, deleteCountry, addFavorite } from '../ac
 import { SearchInput } from '../styled/SearchInput';
 
 class CountryFlagContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.inputRef = React.createRef();
+    }
+
     componentDidMount() {
         this.props.dispatch(getCountries())
         this.props.dispatch(searchCountries(''))
@@ -25,8 +30,20 @@ class CountryFlagContainer extends Component {
     render() {
         return (
             <div>
-                <SearchInput type="text" placeholder="Type here, to find country" onChange={this.search} />
-                <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry} addFavorite={this.addFavorite}/>
+                <SearchInput 
+                    type="text" 
+                    placeholder="Type here, to find country" 
+                    onChange={this.search} 
+                    ref={this.inputRef}
+                    onMouseEnter={() => {
+                        this.inputRef.current.focus()
+                    }}
+                />
+                <CountryFlagList 
+                    countries={this.props.visibleCountries} 
+                    deleteCountry={this.deleteCountry}
+                    addFavorite={this.addFavorite}
+                />
             </div>
         )
     }

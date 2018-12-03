@@ -13,7 +13,6 @@ library.add(faTrashAlt, faInfo, faHeart)
 
  const GlobalStyle = createGlobalStyle `
     * {
-        outline: none;
         box-sizing: border-box;
     }
     body {
