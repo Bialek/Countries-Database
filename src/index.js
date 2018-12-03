@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import DevTools from './DevTools ';
+// import DevTools from './DevTools ';
 import { Router, hashHistory } from 'react-router';
 import routes from './routes';
 import { createGlobalStyle  } from 'styled-components';
@@ -29,7 +29,7 @@ render(
     <Provider store={store}>
         <div>
             <Router history={hashHistory} routes={routes}/>
-            <DevTools/>
+            {/* <DevTools/> */}
             <GlobalStyle />
         </div>
     </Provider>,

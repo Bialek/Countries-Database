@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    height: 500px;
-    width: 400px;
+    height: 600px;
+    width: 500px;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.13);
     margin: 20px auto;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const Header = styled.div`
     position: relative;
     width: 100%;
-    height: 30%;
+    height: 25%;
     background: #003e9f;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
